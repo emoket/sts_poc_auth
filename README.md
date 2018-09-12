@@ -19,9 +19,9 @@ PoC 시나리오 중 인증 부분 구현 소스
 
 아래 URL로 매핑된 단순 서비스를 실행
 
-* /admin
-* /user
-* /guest
+* /admin-only
+* /user-service
+* /public-service
 
 ### 3. API-Gateway
 
@@ -30,6 +30,8 @@ PoC 시나리오 중 인증 부분 구현 소스
 * `auth-center` 와 `back-end` 서비스 라우팅 정의
 * JWT 토큰 검증
 * 롤-베이스 인증 정의 (Spring Security)
+
+허용 범위
 
 | URL                     | 비고             |
 | ----------------------- | ---------------- |
@@ -66,11 +68,11 @@ The user `admin` is defined with two roles: `USER` and `ADMIN`, while `emoket` i
 ### 4. Verify
 The general command to verify if the auth works is as follows:
 ```bash
-curl -i -H "Authorization: Bearer token-you-got-in-step-3" http://localhost:8080/backend/user
+curl -i -H "Authorization: Bearer token-you-got-in-step-3" http://localhost:8080/backend/user-service
 ```
 or without token:
 ```bash
-curl -i http://localhost:8080/backend/user
+curl -i http://localhost:8080/backend/user-service
 ```
 You can change the token and the URL as need. To sum up, the following table represents all possible response status codes while sending requests to different URLs with different tokens:
 
