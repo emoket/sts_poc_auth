@@ -102,11 +102,3 @@ You can change the token and the URL as need. To sum up, the following table rep
 5. 서버는 토큰을 검증
 
 6. 검증 결과 응답
-
-### Build Error Issue
-
-Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.21.0:test
-
-``` bash
-mvn install -DskipTests
-```
