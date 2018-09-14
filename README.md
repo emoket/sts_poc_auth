@@ -76,11 +76,11 @@ curl -i http://localhost:8080/backend/user-service
 ```
 You can change the token and the URL as need. To sum up, the following table represents all possible response status codes while sending requests to different URLs with different tokens:
 
-|                                     | /backend/admin-only | /backend/user-service | /backend/public-service |
+|                                     | /backend/admin-only | /backend/public-service | /backend/user-service |
 | ----------------------------------- | -------------- | ------------- | -------------- |
-| `admin` token (role `USER` `ADMIN`) | 200            | 200           | 200            |
+| no token                            | 401            | 200            | 401           |
 | `emoket` token (role `USER`)        | 403            | 200           | 200            |
-| no token                            | 401            | 401           | 200            |
+| `admin` token (role `USER` `ADMIN`) | 200            | 200           | 200            |
 
 ---
 
